@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>透明度照片</title>
+    <script type="text/javascript"></script>
+    <style>
+        ul li{
+            list-style-type: none;
+        }
+        img{
+            
+            width: 200px;
+            height: 200px;
+        }
+        #imglist{
+            border: 1px black solid;
+            overflow: hidden;
+            zoom: 1;
+            margin: 0 auto;
+            padding: 0 0 10px 10px ;
+        }
+        #imglist li{
+            float: left;
+            margin: 10px 10px 0 0;
+            border: 1px gray solid;
+        }
+        #imglist img{
+            float: left;
+            opacity: 0.2;
+            cursor:crosshair;
+        }
+        #imglist li.current img{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul id="imglist">
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+        <li><img src="./image/bird.jpg" alt="two bird"></li>
+    </ul>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oli=document.getElementsByTagName('li');
+            for (var i = 0 ; i < oli.length; i++) {
+                oli[i].onmouseover=function(){
+                    this.className="current";
+                }
+                oli[i].onmouseout=function(){
+                    this.className="";
+                }
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>

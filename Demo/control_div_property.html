@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>控制div属性</title>
+    <script type="text/javascript"></script>
+    <style type="text/css">
+        #l_login{
+            border: 1px black solid;
+            background-color: burlywood;
+            width: 250px;
+            height: 250px;
+            text-align: center;
+            float: right;
+            margin-top: 50px;
+            padding: 0 auto;
+        }
+        #tips{
+            border: 1px red solid;
+            display: none;
+            color: brown;
+            font-size: 8px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="l_login">
+        账号：<input type="text"><br>
+        密码：<input type="password" id="password" maxlength="10"><br>
+        <label><input type="checkbox" id="check">两周内自动登录</label>
+        <div id="tips">请不要在公共网络或选择</div><br>
+        <input type="submit" id="submit" value="登录">
+
+
+        <script type="text/javascript">
+            var otips=document.getElementById("tips");
+            var olabel=document.getElementsByTagName("label")[0];
+            olabel.onmouseover=function(){
+                otips.style.display="block";
+            }
+            olabel.onmouseout=function(){
+                otips.style.display="none";
+            }
+        </script>
+    </div>
+</body>
+</html>
