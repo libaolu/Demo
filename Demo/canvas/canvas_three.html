@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三次贝塞尔</title>
+</head>
+<body onload="draw()">
+    <canvas id="canvas" width="400" height="400">nothing</canvas>
+
+    <script type="text/javascript">
+        function draw(){
+            var canvas=document.getElementById("canvas");
+            if(canvas.getContext){
+                var cx=canvas.getContext('2d');
+
+                cx.beginPath();
+                cx.moveTo(75,40);
+                cx.bezierCurveTo(75,37,70,25,50,25);
+                cx.bezierCurveTo(20,25,20,62.5,20,62.5);
+                cx.bezierCurveTo(20,80,40,102,75,120);
+                cx.bezierCurveTo(110,102,130,80,130,62.5);
+                cx.bezierCurveTo(130,62.5,130,25,100,25);
+                cx.bezierCurveTo(85,25,75,37,75,40);
+                cx.fill();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆形</title>
+</head>
+<body>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        <script type="text/javascript">
+            var canvas=document.getElementById("canvas");
+            var context=canvas.getContext("2d");
+
+            /*用canvas绘制圆形或弧形
+                *arc(x,y,radius,startAngle,endAngle,direction) - 圆形或弧形
+                    *x和y - 绘制圆形的圆心坐标值
+                    *radius - 绘制圆形的半径
+                    *startAngle - 开始位置
+                    *endAngle - 结束位置
+                    *direction - 是顺时针还是逆时针
+            */
+
+            //绘制实心圆形
+            context.beginPath();
+            context.arc(170,60,50,0,Math.PI*2);
+            context.closePath();
+            context.fill();
+
+            //绘制空心圆形
+            context.beginPath();
+            context.arc(170,170,50,0,Math.PI*2);
+            context.closePath();
+            context.stroke();
+
+            //绘制实心弧形
+            context.beginPath();
+            context.arc(280,60,50,0,Math.PI*3/2,false);
+            context.closePath();
+            context.fill();//fill填充
+
+            //绘制空心弧形
+            context.beginPath();
+            context.arc(280,170,50,0,Math.PI*3/2);
+            context.closePath();
+            context.stroke();//stroke笔
+
+
+
+        </script>
+</body>
+</html>

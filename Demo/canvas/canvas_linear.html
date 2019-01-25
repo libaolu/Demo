@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas线性渐变</title>
+</head>
+<body>
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+    <script type="text/javascript">
+        var canvas=document.getElementById("canvas");
+        var context=canvas.getContext("2d");
+
+        /*
+            调用createLinearGradient（）方法设置渐变
+            通过传递四个参数设置基准线得位置
+            该方法返回线性渐变对象
+        */
+        var grad=context.createLinearGradient(0,0,200,200);
+
+        /*
+            *设置渐变得颜色
+            渐变对象调用addColorStop(position,color)方法设置颜色
+            position-设置当前颜色的位置
+            值范围为0-1
+            color-设置得颜色
+        */
+        grad.addColorStop(0,"#C71585");
+        grad.addColorStop(0.25,"#D8BFD8");
+        grad.addColorStop(0.5,"#4B0082");
+        grad.addColorStop(0.75,"#7B68EE");
+        grad.addColorStop(1,"#EE82EE");
+
+        /*
+            *设置填充样式为线性渐变
+        */
+        context.fillStyle=grad;
+
+        /*
+            *绘制矩形
+        */
+        context.fillRect(0,0,200,200);
+    </script>
+</body>
+</html>
